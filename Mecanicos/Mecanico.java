@@ -9,5 +9,42 @@ package Mecanicos;
  * @author Dell
  */
 public class Mecanico {
+    private String id;
+    private String name;
+    private String specialty;
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
+
+    public Mecanico(String id, String name, String specialty) {
+        this.id = id;
+        this.name = name;
+        this.specialty = specialty;
+    }
+
+    public Mecanico() {
+        this("","","");
+    }
+
+    
+    
+    @Override
+    public String toString() {
+        return "Mecanico{" + "id=" + id + ", name=" + name + ", specialty=" + specialty + '}';
+    }
+    
     
 }
