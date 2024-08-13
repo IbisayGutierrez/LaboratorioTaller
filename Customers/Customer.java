@@ -4,6 +4,9 @@
  */
 package Customers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author 9552
@@ -13,6 +16,11 @@ public class Customer {
     private String Name;
     private String PhoneNumber;
     private String Direction;
+    
+
+    private Map<String, Customer> customers;
+
+    
 
     public String getId() {
         return Id;
@@ -49,11 +57,32 @@ public class Customer {
         this("","","","");
     }
     
+    public void addCustomer(Customer customer) {
+        customers.put(customer.getId(), customer);
+    }
+    
+        
+    public void removeCustomer(String id) {
+        customers.remove(id);
+    }
+    
+        
+    public Customer searchCustomer(String id) {
+        return customers.get(id);
+    }
+    
+     public void showCustomers() {
+        for (Customer customer : customers.values()) {
+            System.out.println(customer.toString());
+        }
+    }
+     
+     
 
     @Override
     public String toString() {
         return "Cliente{" + "Id=" + Id + ", Nombre=" + Name + ", Telefono=" + PhoneNumber + ", Direccion=" + Direction + '}';
     }
-        
-}
-
+  
+    }
+ 
