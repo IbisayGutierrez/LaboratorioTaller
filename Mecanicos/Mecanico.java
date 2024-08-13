@@ -46,5 +46,22 @@ public class Mecanico {
         return "Mecanico{" + "id=" + id + ", name=" + name + ", specialty=" + specialty + '}';
     }
     
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Mecanico mecanico = (Mecanico) obj;
+        return getId().equals(mecanico.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getId().hashCode();
+    }
 }
+    
+
